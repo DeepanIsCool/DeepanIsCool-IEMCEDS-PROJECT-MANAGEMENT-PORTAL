@@ -47,12 +47,12 @@ if (!fs.existsSync(resumeDir)) {
 }
 // Routes
 // app.use('/studentsRoutes', studentsRoutes);
-app.use('/studentsRoutes', require("./Students/studentsRoutes"));
-app.use('/facultyRoutes', require("./Faculty/facultyRoutes"));
+app.use('/api/studentsRoutes', require("./Students/studentsRoutes"));
+app.use('/api/facultyRoutes', require("./Faculty/facultyRoutes"));
 //app.use('/adminRoutes', require("./Admin/adminRoutes"));
-app.use('/projectRoutes', require("./Projects/projectRoutes"));
+app.use('/api/projectRoutes', require("./Projects/projectRoutes"));
 
-app.get("/", (req, res) => {
+app.get("/api", (req, res) => {
     res.send("Welcome to the Project Management Backend");
   });
 // Start server
