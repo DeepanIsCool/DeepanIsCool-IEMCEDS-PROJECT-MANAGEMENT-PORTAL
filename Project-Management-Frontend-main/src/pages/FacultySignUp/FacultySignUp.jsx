@@ -743,7 +743,7 @@ const FacultySignUp = () => {
           <input
             className={`Input ${passwordError ? "" : ""}`}
             type="name"
-            placeholder="Subhas Bose"
+            placeholder="Deepan Sadhukhan"
             value={name}
             onChange={handleNameChange}
             readOnly
