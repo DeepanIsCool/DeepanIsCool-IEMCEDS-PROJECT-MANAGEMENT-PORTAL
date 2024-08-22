@@ -25,7 +25,7 @@ const StudentLogin = () => {
     e.preventDefault()
     const response = await axios.post(
       import.meta.env.VITE_BACKEND_URL +
-        "studentsRoutes/signin",
+        "api/studentsRoutes/signin",
        {
         enrollment_no:formData.enrollment_no, 
             password:formData.password

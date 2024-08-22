@@ -25,7 +25,7 @@ const FacultyLogin = () => {
     e.preventDefault()
     const response = await axios.post(
       import.meta.env.VITE_BACKEND_URL +
-        "facultyRoutes/signin",
+        "api/facultyRoutes/signin",
        {
             employee_id:formData.employee_id, 
             password:formData.password
