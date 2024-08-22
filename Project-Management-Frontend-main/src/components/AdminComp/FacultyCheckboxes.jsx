@@ -22,7 +22,7 @@
     useEffect(() => {
       const fetchFaculty = async () => {
         try {
-          const response = await axios.get('http://localhost:3000/facultyRoutes/getAllFaculty', {
+          const response = await axios.get('http://localhost:3000/api/facultyRoutes/getAllFaculty', {
             headers: {
               Authorization: `Bearer ${localStorage.getItem("access_token")}`
             }

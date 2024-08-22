@@ -14,7 +14,7 @@ const StudentDashboard = () => {
   useEffect(() => {
     const fetchFacultyProflie = async () => {
       try {
-        const response = await axios.get('http://localhost:3000/studentsRoutes/studentProfile', {
+        const response = await axios.get('http://localhost:3000/api/studentsRoutes/studentProfile', {
           headers: {
             Authorization: `Bearer ${localStorage.getItem("student_token")}`
           }
@@ -61,7 +61,7 @@ const StudentDashboard = () => {
 useEffect(() => {
   const fetchAllProjects = async () => {
     try {
-      const response = await axios.get('http://localhost:3000/projectRoutes/getAllProjects', {
+      const response = await axios.get('http://localhost:3000/api/projectRoutes/getAllProjects', {
         headers: {
           Authorization: `Bearer ${localStorage.getItem("student_token")}`
         }
@@ -78,7 +78,7 @@ useEffect(() => {
 useEffect(() => {
   const fetchFaculty = async () => {
     try {
-      const response = await axios.get('http://localhost:3000/facultyRoutes/getAllFaculty', {
+      const response = await axios.get('http://localhost:3000/api/facultyRoutes/getAllFaculty', {
         headers: {
           Authorization: `Bearer ${localStorage.getItem("access_token")}`
         }
@@ -91,7 +91,7 @@ useEffect(() => {
   };
   const fetchCurrentStudent = async () => {
     try {
-      const response = await axios.get('http://localhost:3000/studentsRoutes/getCurrentProject', {
+      const response = await axios.get('http://localhost:3000/api/studentsRoutes/getCurrentProject', {
         headers: {
           Authorization: `Bearer ${localStorage.getItem("student_token")}`
         }
@@ -106,7 +106,7 @@ useEffect(() => {
   };
   const fetchAllStudents = async () => {
     try {
-      const response = await axios.get('http://localhost:3000/studentsRoutes/getAllStudents', {
+      const response = await axios.get('http://localhost:3000/api/studentsRoutes/getAllStudents', {
         headers: {
           Authorization: `Bearer ${localStorage.getItem("student_token")}`
         }

@@ -110,7 +110,7 @@ const FacultySignUp = () => {
         // );
         // Make API call to verify OTP or perform desired action
         const response = await fetch(
-          "http://localhost:3000/facultyRoutes/signupvalidation/validatePhoneNumberOTP",
+          "http://localhost:3000/api/facultyRoutes/signupvalidation/validatePhoneNumberOTP",
           {
             method: "POST",
             headers: {
@@ -153,7 +153,7 @@ const FacultySignUp = () => {
         const phoneNumber = phone.toString();
         setIsOtpLoading(true);
         const response = await fetch(
-          "http://localhost:3000/facultyRoutes/signup/SendOtpNumber",
+          "http://localhost:3000/api/facultyRoutes/signup/SendOtpNumber",
           {
             method: "POST",
             headers: {
@@ -214,7 +214,7 @@ const FacultySignUp = () => {
         // );
         // Make API call to verify OTP or perform desired action
         const response = await fetch(
-          "http://localhost:3000/facultyRoutes/signupvalidation/validateEmailOTP",
+          "http://localhost:3000/api/facultyRoutes/signupvalidation/validateEmailOTP",
           {
             method: "POST",
             headers: {
@@ -261,7 +261,7 @@ const FacultySignUp = () => {
         // const email = email.toString();
         setIsEmailOtpLoading(true);
         const response = await fetch(
-          "http://localhost:3000/facultyRoutes/signup/SendOtpEmail",
+          "http://localhost:3000/api/facultyRoutes/signup/SendOtpEmail",
           {
             method: "POST",
             headers: {
@@ -366,7 +366,7 @@ const FacultySignUp = () => {
      
         // Make API call to verify Employee Id or perform desired action
         const response = await fetch(
-          "http://localhost:3000/facultyRoutes/signupvalidation",
+          "http://localhost:3000/api/facultyRoutes/signupvalidation",
           {
             method: "POST",
             headers: {
@@ -482,7 +482,7 @@ const FacultySignUp = () => {
         verifyOtpEmail !== ""
     );
   };
-  const url = "http://localhost:3000/facultyRoutes/signup";
+  const url = "http://localhost:3000/api/facultyRoutes/signup";
 
   const handleSubmit = async (event) => {
     event.preventDefault();

@@ -22,7 +22,7 @@ const StudentProfile = () => {
   useEffect(() => {
     const fetchStudentProflie = async () => {
       try {
-        const response = await axios.get('http://localhost:3000/studentsRoutes/studentProfile', {
+        const response = await axios.get('http://localhost:3000/api/studentsRoutes/studentProfile', {
           headers: {
             Authorization: `Bearer ${localStorage.getItem("student_token")}`
           }
@@ -79,7 +79,7 @@ const StudentProfile = () => {
 
   const handleSave = async () => {
     try {
-      const response = await axios.put('http://localhost:3000/studentsRoutes/editStudentProfile', formData, {
+      const response = await axios.put('http://localhost:3000/api/studentsRoutes/editStudentProfile', formData, {
         headers: {
           Authorization: `Bearer ${localStorage.getItem("student_token")}`
         }

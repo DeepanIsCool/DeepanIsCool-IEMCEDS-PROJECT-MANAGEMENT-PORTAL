@@ -24,7 +24,7 @@ function EditForm() {
   async function getProject() {
     try{
       const response = await axios.post(
-         "http://localhost:3000/projectRoutes/getProjectById",
+         "http://localhost:3000/api/projectRoutes/getProjectById",
         {
           id:projectId
         },
@@ -81,7 +81,7 @@ function EditForm() {
 console.log(formData);
     try {
       const response = await axios.put(
-        `http://localhost:3000/projectRoutes/editProject/${projectId}`,
+        `http://localhost:3000/api/projectRoutes/editProject/${projectId}`,
         formData,
         {
           headers: {

@@ -7,7 +7,7 @@ export const fetchFacultyList = async () => {
         throw new Error('No access token found');
       }
   
-      const response = await fetch('http://localhost:3000/facultyRoutes/getAllFaculty', {
+      const response = await fetch('http://localhost:3000/api/facultyRoutes/getAllFaculty', {
         method: 'GET',
         headers: {
           'Authorization': `Bearer ${token}`,

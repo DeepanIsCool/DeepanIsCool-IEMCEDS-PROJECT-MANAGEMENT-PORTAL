@@ -15,7 +15,7 @@ const FacultyProfile = () => {
   useEffect(() => {
     const fetchFacultyProflie = async () => {
       try {
-        const response = await axios.get('http://localhost:3000/facultyRoutes/facultyProfile', {
+        const response = await axios.get('http://localhost:3000/api/facultyRoutes/facultyProfile', {
           headers: {
             Authorization: `Bearer ${localStorage.getItem("access_token")}`
           }
@@ -39,7 +39,7 @@ const FacultyProfile = () => {
   }, []);
   const handleSave = async () => {
     try {
-      const response = await axios.put('http://localhost:3000/facultyRoutes/editFacultyProfile', formData, {
+      const response = await axios.put('http://localhost:3000/api/facultyRoutes/editFacultyProfile', formData, {
         headers: {
           Authorization: `Bearer ${localStorage.getItem("access_token")}`
         }

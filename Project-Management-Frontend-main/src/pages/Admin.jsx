@@ -16,7 +16,7 @@ const Admin = () => {
 useEffect(() => {
   const fetchFacultyProflie = async () => {
     try {
-      const response = await axios.get('http://localhost:3000/facultyRoutes/facultyProfile', {
+      const response = await axios.get('http://localhost:3000/api/facultyRoutes/facultyProfile', {
         headers: {
           Authorization: `Bearer ${localStorage.getItem("access_token")}`
         }
@@ -33,7 +33,7 @@ useEffect(() => {
 }, []);
               const fetchApplications = async () => {
           try {
-            const response = await axios.get('http://localhost:3000/projectRoutes/getallapplications', {
+            const response = await axios.get('http://localhost:3000/api/projectRoutes/getallapplications', {
               headers: {
                 Authorization: `Bearer ${localStorage.getItem("access_token")}`
               }
@@ -57,7 +57,7 @@ useEffect(() => {
       useEffect(() => {
         const fetchProjects = async () => {
           try {
-            const response = await axios.get('http://localhost:3000/projectRoutes/getProjects', {
+            const response = await axios.get('http://localhost:3000/api/projectRoutes/getProjects', {
               headers: {
                 Authorization: `Bearer ${localStorage.getItem("access_token")}`
               }
@@ -76,7 +76,7 @@ useEffect(() => {
     useEffect(() => {
       const fetchFaculty = async () => {
         try {
-          const response = await axios.get('http://localhost:3000/facultyRoutes/getAllFaculty', {
+          const response = await axios.get('http://localhost:3000/api/facultyRoutes/getAllFaculty', {
             headers: {
               Authorization: `Bearer ${localStorage.getItem("access_token")}`
             }
@@ -96,7 +96,7 @@ useEffect(() => {
     };
     const fetchAllStudents = async () => {
       try {
-        const response = await axios.get('http://localhost:3000/studentsRoutes/getAllStudents', {
+        const response = await axios.get('http://localhost:3000/api/studentsRoutes/getAllStudents', {
           headers: {
             Authorization: `Bearer ${localStorage.getItem("student_token")}`
           }

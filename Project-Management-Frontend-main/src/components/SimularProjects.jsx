@@ -11,7 +11,7 @@ const SimularProjects = ({ className = "" }) => {
 
   const fetchData = useCallback(async () => {
     try {
-      const response = await fetch("http://localhost:3000/projectRoutes/createProject"); // Replace with your API endpoint
+      const response = await fetch("http://localhost:3000/api/projectRoutes/createProject"); // Replace with your API endpoint
       const data = await response.json();
       setFormData(data);
       setIsFormOpen(true); // Open the form after fetching data

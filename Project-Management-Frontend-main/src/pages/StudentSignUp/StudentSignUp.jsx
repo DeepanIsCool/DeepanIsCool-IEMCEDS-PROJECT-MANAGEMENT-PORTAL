@@ -108,7 +108,7 @@ const StudentSignUp = () => {
         // );
         // Make API call to verify OTP or perform desired action
         const response = await fetch(
-          "http://localhost:3000/studentsRoutes/signupvalidation/validatePhoneNumberOTP",
+          "http://localhost:3000/api/studentsRoutes/signupvalidation/validatePhoneNumberOTP",
           {
             method: "POST",
             headers: {
@@ -151,7 +151,7 @@ const StudentSignUp = () => {
         const phoneNumber = phone.toString();
         setIsOtpLoading(true);
         const response = await fetch(
-          "http://localhost:3000/studentsRoutes/signup/SendOtpNumber",
+          "http://localhost:3000/api/studentsRoutes/signup/SendOtpNumber",
           {
             method: "POST",
             headers: {
@@ -212,7 +212,7 @@ const StudentSignUp = () => {
         // );
         // Make API call to verify OTP or perform desired action
         const response = await fetch(
-          "http://localhost:3000/studentsRoutes/signupvalidation/ValidateEmailOTP",
+          "http://localhost:3000/api/studentsRoutes/signupvalidation/ValidateEmailOTP",
           {
             method: "POST",
             headers: {
@@ -258,7 +258,7 @@ const StudentSignUp = () => {
         // const email = email.toString();
         setIsEmailOtpLoading(true);
         const response = await fetch(
-          "http://localhost:3000/studentsRoutes/signup/SendOtpEmail",
+          "http://localhost:3000/api/studentsRoutes/signup/SendOtpEmail",
           {
             method: "POST",
             headers: {
@@ -363,7 +363,7 @@ const StudentSignUp = () => {
      
         // Make API call to verify Enrollment number or perform desired action
         const response = await fetch(
-          "http://localhost:3000/studentsRoutes/signupvalidation",
+          "http://localhost:3000/api/studentsRoutes/signupvalidation",
           {
             method: "POST",
             headers: {
@@ -479,7 +479,7 @@ const StudentSignUp = () => {
         verifyOtpEmail !== ""
     );
   };
-  const url = "http://localhost:3000/studentsRoutes/signup";
+  const url = "http://localhost:3000/api/studentsRoutes/signup";
 
   const handleSubmit = async (event) => {
     event.preventDefault();

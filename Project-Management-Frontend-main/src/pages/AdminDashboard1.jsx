@@ -14,7 +14,7 @@ const AdminDashboard1 = ({setPopUp,show,studentId,title,applicationId}) => {
   async function approve(id) {
     try{
       const response = await axios.post(
-         "http://localhost:3000/projectRoutes/approveforProject",
+         "http://localhost:3000/api/projectRoutes/approveforProject",
          {
           applicationId:applicationId,
           status : "Approved"
@@ -34,7 +34,7 @@ const AdminDashboard1 = ({setPopUp,show,studentId,title,applicationId}) => {
   async function reject(id) {
     try{
       const response = await axios.post(
-         "http://localhost:3000/projectRoutes/approveforProject",
+         "http://localhost:3000/api/projectRoutes/approveforProject",
          {
           applicationId:applicationId,
           status : "Rejected"
@@ -56,7 +56,7 @@ const AdminDashboard1 = ({setPopUp,show,studentId,title,applicationId}) => {
     async function fetchStudentDetails(){
       try{
         const response = await axios.post (
-          "http://localhost:3000/studentsRoutes/studentdetails",
+          "http://localhost:3000/api/studentsRoutes/studentdetails",
           {
             id:studentId
                },

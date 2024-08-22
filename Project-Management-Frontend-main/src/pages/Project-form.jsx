@@ -11,7 +11,7 @@ function ProjectForm() {
   useEffect(() => {
     const fetchFacultyProflie = async () => {
       try {
-        const response = await axios.get('http://localhost:3000/facultyRoutes/facultyProfile', {
+        const response = await axios.get('http://localhost:3000/api/facultyRoutes/facultyProfile', {
           headers: {
             Authorization: `Bearer ${localStorage.getItem("access_token")}`
           }
@@ -72,7 +72,7 @@ function ProjectForm() {
 console.log(formData);
     try {
       const response = await axios.post(
-        "http://localhost:3000/projectRoutes/createProject",
+        "http://localhost:3000/api/projectRoutes/createProject",
         dataToSend,
         {
           headers: {
