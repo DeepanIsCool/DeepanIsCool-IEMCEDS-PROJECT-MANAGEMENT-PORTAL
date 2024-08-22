@@ -5,7 +5,7 @@ import {
   useNavigationType,
   useLocation,
 } from "react-router-dom";
-import AdminDashboard from "./pages/AdminDashboard";
+// import AdminDashboard from "./pages/AdminDashboard";
 import ProjectForm from "./pages/Project-form";
 import StudentDashboard from "./pages/StudentDashboard";
 import Admin from "./pages/Admin";
@@ -62,7 +62,7 @@ function App() {
     <Routes>
       <Route path="/" element={<MainDashboard />} />
 
-      <Route path="/admin" element={<AdminDashboard />} />
+      {/* <Route path="/admin" element={<AdminDashboard />} /> */}
       <Route path="/edit/:projectId" element={<EditForm />} />
       <Route path="/Project-form" element={<ProjectForm />} />
       <Route path="/student-dashboard" element={<StudentDashboard/>}/>
