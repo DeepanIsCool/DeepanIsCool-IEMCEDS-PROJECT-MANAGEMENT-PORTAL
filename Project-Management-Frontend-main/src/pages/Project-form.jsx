@@ -118,7 +118,7 @@ function ProjectForm() {
             <label
               htmlFor="project_name"
               className="block text-gray-700 font-bold mb-2"
-              onClick={()=>//console.log(formData)}
+              
             >
               Project Name
             </label>
