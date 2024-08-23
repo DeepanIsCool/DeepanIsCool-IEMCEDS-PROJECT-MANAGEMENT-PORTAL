@@ -32,7 +32,7 @@ const StudentLogin = () => {
           
         }
     );
-    console.log(response.data)
+    //console.log(response.data)
     localStorage.setItem("student_token",response.data.accessToken)
     navigate("/student-dashboard")
   }

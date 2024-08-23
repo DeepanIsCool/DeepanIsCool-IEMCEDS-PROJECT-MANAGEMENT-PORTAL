@@ -11,7 +11,7 @@ export function CurrentProjectCard({title,launchDate,requirement,description,tag
   const filteredNames = studentList
   .filter(student => studentId.includes(student._id))
   .map(student => student.name);
-// console.log(filteredNames)
+// //console.log(filteredNames)
   return (
     <div>
             <div>

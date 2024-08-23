@@ -100,7 +100,7 @@ const StudentSignUp = () => {
     if (value.length === 4) {
       try {
         const phoneNumber = phone.toString();
-        // console.log(
+        // //console.log(
         //   JSON.stringify({
         //     number: phoneNumber, // Send phone number
         //     Number_otp: value, // Send OTP
@@ -123,7 +123,7 @@ const StudentSignUp = () => {
 
         if (response.ok) {
           // Handle successful response
-          console.log("OTP verified successfully");
+          //console.log("OTP verified successfully");
           setVerified(true);
           setverifyOtp(true);
           setTimerActive(false); // Stop the resend timer
@@ -147,7 +147,7 @@ const StudentSignUp = () => {
 
     try {
       if (phone !== "") {
-        // console.log(JSON.stringify({ number: userData.phone_no }));
+        // //console.log(JSON.stringify({ number: userData.phone_no }));
         const phoneNumber = phone.toString();
         setIsOtpLoading(true);
         const response = await fetch(
@@ -204,7 +204,7 @@ const StudentSignUp = () => {
     if (value.length === 4) {
       try {
         const EmailSignup = email.toString();
-        // console.log(
+        // //console.log(
         //   JSON.stringify({
         //     Email: EmailSignup, // Send phone number
         //     otp: value, // Send OTP
@@ -228,8 +228,8 @@ const StudentSignUp = () => {
         if (response.ok) {
           // Handle successful response
           // const resData = await response.json();
-          console.log("OTP verified successfully");
-          // console.log(resData);
+          //console.log("OTP verified successfully");
+          // //console.log(resData);
 
           setVerifyOtpEmail(true);
           setTimerActiveEmail(false); // Stop the resend timer
@@ -248,7 +248,7 @@ const StudentSignUp = () => {
       setOTPValueEmail("");
     }
   };
-  // console.log(setEmailVerified)
+  // //console.log(setEmailVerified)
 
   const handleSendOTPForEmail = async (e) => {
     e.preventDefault();
@@ -289,7 +289,7 @@ const StudentSignUp = () => {
     setverifyOtp(false);
     setVerifyOtpEmail(false);
   }, [email, phone, enroll, name]);
-  // console.log(userData);
+  // //console.log(userData);
 
   useEffect(() => {
     let interval;
@@ -375,7 +375,7 @@ const StudentSignUp = () => {
           }
         );
 
-        // console.log(
+        // //console.log(
         //   JSON.stringify({
         //     EnrollmentNo: enrollmentNumber, // Use value directly here
         //   })
@@ -387,8 +387,8 @@ const StudentSignUp = () => {
           setEmail(data.email);
           setPhone(data.phone_no);
           setName(data.Name);
-          console.log(data, "Enrollment number verified successfully");
-          console.log(data)
+          //console.log(data, "Enrollment number verified successfully");
+          //console.log(data)
           // Perform further actions based on the API response
         }
         // else {
@@ -483,7 +483,7 @@ const StudentSignUp = () => {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-    console.log("Hey")
+    //console.log("Hey")
     if (enrollError) {
       alert("Please enter a 14-digit enrollment number");
       return;
@@ -510,7 +510,7 @@ const StudentSignUp = () => {
       
       return;
     }
-    console.log("HElloooeoeoeo");
+    //console.log("HElloooeoeoeo");
 
     const requestBody = JSON.stringify({
       phone: phone,
@@ -520,8 +520,8 @@ const StudentSignUp = () => {
       enrollment_no: enroll,
     });
     
-    console.log(requestBody);
-    console.log("HElloooeoeoeo");
+    //console.log(requestBody);
+    //console.log("HElloooeoeoeo");
 
     try {
       setisLoading(true);
@@ -566,10 +566,10 @@ const StudentSignUp = () => {
   //   gsap.to(".Left-Logo", { opacity: 1, delay: 0.5, top: "0px" });
   //   // const accessToken = sessionStorage.getItem("accessToken");
   //   // if (accessToken) {
-  //   //   // console.log("Access token found:", accessToken);
+  //   //   // //console.log("Access token found:", accessToken);
   //   //   navigate("/home");
   //   // } else {
-  //   //   console.log("Access token not found");
+  //   //   //console.log("Access token not found");
   //   // }
   // }, [navigate]);
 

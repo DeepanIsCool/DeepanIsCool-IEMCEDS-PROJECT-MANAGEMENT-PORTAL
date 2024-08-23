@@ -10,7 +10,7 @@ const AdminDashboard1 = ({setPopUp,show,studentId,title,applicationId}) => {
   const [studentDetails, setStudentDetails] = useState([]);
   const [skills,setSkills]=useState([])
   // const token = localStorage.getItem("access_token"); // Replace with actual token
-  // // console.log(token)
+  // // //console.log(token)
   async function approve(id) {
     try{
       const response = await axios.post(
@@ -24,11 +24,11 @@ const AdminDashboard1 = ({setPopUp,show,studentId,title,applicationId}) => {
             authorization: "Bearer " + localStorage.getItem("access_token"),
           },
         })
-      console.log(response.data)
+      //console.log(response.data)
       setPopUp(false)
     }
     catch(err){
-      console.log(err) 
+      //console.log(err) 
     }
     }
   async function reject(id) {
@@ -44,11 +44,11 @@ const AdminDashboard1 = ({setPopUp,show,studentId,title,applicationId}) => {
             authorization: "Bearer " + localStorage.getItem("access_token"),
           },
         })
-      console.log(response.data)
+      //console.log(response.data)
       setPopUp(false)
     }
     catch(err){
-      console.log(err) 
+      //console.log(err) 
     }
     }
 
@@ -66,14 +66,14 @@ const AdminDashboard1 = ({setPopUp,show,studentId,title,applicationId}) => {
             },
           }
         );
-        console.log(response.data)
+        //console.log(response.data)
         setStudentDetails(response.data)
         setSkills(response.data.Skills)
-        console.log(skills)
+        //console.log(skills)
       }
       catch(error){
-          console.log(error)
-         console.log(localStorage.getItem("access_token"))
+          //console.log(error)
+         //console.log(localStorage.getItem("access_token"))
 
       }
   }

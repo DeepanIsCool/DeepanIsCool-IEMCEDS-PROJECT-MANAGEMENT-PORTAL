@@ -29,7 +29,7 @@
           });
           setFacultyLists(response.data); // Store the fetched data in the state variable
         } catch (err) {
-          console.log(err)
+          //console.log(err)
         } 
       };
 

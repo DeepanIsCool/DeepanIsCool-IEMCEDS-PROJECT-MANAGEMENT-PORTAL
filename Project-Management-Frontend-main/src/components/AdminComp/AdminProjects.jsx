@@ -26,11 +26,11 @@ const AdminProjects = ({title,launchDate,requirement,description,tags,facultyId,
           projectID: projectId,
         },
       });
-      console.log('Project deleted successfully');
+      //console.log('Project deleted successfully');
       onDelete(projectId)
     } catch (error) {
       console.error('Error deleting the project:', error.response ? error.response.data : error.message);
-      console.log(projectId)
+      //console.log(projectId)
       onDelete(projectId)
       throw error;
     }

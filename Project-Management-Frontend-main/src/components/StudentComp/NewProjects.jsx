@@ -12,7 +12,7 @@ const NewProjects = ({title,description,tags,facultyId,facultyList,studentList,s
   const filteredNames = studentList
   .filter(student => studentId.includes(student._id))
   .map(student => student.name);
-// console.log(filteredNames)
+// //console.log(filteredNames)
   return (
     <div>
       <div>

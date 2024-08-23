@@ -21,7 +21,7 @@ const FacultyProfile = () => {
           }
         });
          // Store the fetched data in the state variable
-        console.log(response.data)
+        //console.log(response.data)
         setFacultyDetails(response.data);
         setEditMode(false)
         setFormData({
@@ -31,7 +31,7 @@ const FacultyProfile = () => {
     email: response.data.email||''
         });
       } catch (err) {
-        console.log(err)
+        //console.log(err)
       } 
     };
 
@@ -47,7 +47,7 @@ const FacultyProfile = () => {
       setFacultyDetails(response.data);
       setEditMode(false);
     } catch (err) {
-      console.log(err);
+      //console.log(err);
     }
   };
   const handleChange = (e) => {

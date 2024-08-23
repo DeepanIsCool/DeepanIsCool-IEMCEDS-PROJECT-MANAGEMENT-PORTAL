@@ -33,7 +33,7 @@ function EditForm() {
             authorization: "Bearer " + localStorage.getItem("access_token"),
           },
         })
-      console.log(response.data)
+      //console.log(response.data)
       setFormData({
         project_name: response.data.project_name,
     launchDate: "",
@@ -48,7 +48,7 @@ function EditForm() {
       })
     }
     catch(err){
-      console.log(err)
+      //console.log(err)
       
         
       
@@ -78,7 +78,7 @@ function EditForm() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-console.log(formData);
+//console.log(formData);
     try {
       const response = await axios.put(
         `http://localhost:3000/api/projectRoutes/editProject/${projectId}`,

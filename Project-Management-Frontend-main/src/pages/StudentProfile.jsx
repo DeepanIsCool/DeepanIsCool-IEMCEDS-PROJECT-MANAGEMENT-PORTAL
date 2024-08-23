@@ -28,7 +28,7 @@ const StudentProfile = () => {
           }
         });
          // Store the fetched data in the state variable
-        console.log(response.data)
+        //console.log(response.data)
         setStudentDetails(response.data)
         setSkills(response.data.Skills)
          setFormData({
@@ -45,7 +45,7 @@ const StudentProfile = () => {
 
 
       } catch (err) {
-        console.log(err)
+        //console.log(err)
       } 
     };
 
@@ -88,7 +88,7 @@ const StudentProfile = () => {
       setStudentDetails(response.data);
       setEditMode(false);
     } catch (err) {
-      console.log(err);
+      //console.log(err);
     }
   };
   

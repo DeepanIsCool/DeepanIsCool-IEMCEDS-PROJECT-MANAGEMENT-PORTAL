@@ -17,10 +17,10 @@ function ProjectForm() {
           }
         });
          // Store the fetched data in the state variable
-        console.log(response.data)
+        //console.log(response.data)
        setId(response.data._id)
       } catch (err) {
-        console.log(err)
+        //console.log(err)
       } 
     };
 
@@ -69,7 +69,7 @@ function ProjectForm() {
       ...formData,
       faculty_list: updatedFacultyList
     };
-console.log(formData);
+//console.log(formData);
     try {
       const response = await axios.post(
         "http://localhost:3000/api/projectRoutes/createProject",
@@ -80,7 +80,7 @@ console.log(formData);
           },
         }
       );
-      console.log(formData);
+      //console.log(formData);
       setResponseMessage(
         response.data.message || "Form submitted successfully!"
       );
@@ -118,7 +118,7 @@ console.log(formData);
             <label
               htmlFor="project_name"
               className="block text-gray-700 font-bold mb-2"
-              onClick={()=>console.log(formData)}
+              onClick={()=>//console.log(formData)}
             >
               Project Name
             </label>

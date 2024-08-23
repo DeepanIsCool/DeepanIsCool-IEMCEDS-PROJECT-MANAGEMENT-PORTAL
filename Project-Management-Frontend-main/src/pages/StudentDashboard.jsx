@@ -20,10 +20,10 @@ const StudentDashboard = () => {
           }
         });
          // Store the fetched data in the state variable
-        console.log(response.data)
+        //console.log(response.data)
        setStudentName(response.data.name)
       } catch (err) {
-        console.log(err)
+        //console.log(err)
       } 
     };
   
@@ -39,7 +39,7 @@ const StudentDashboard = () => {
           
 //         }
 //     );
-//     // console.log(response.data.accessToken)
+//     // //console.log(response.data.accessToken)
 //   localStorage.setItem("access_token",response.data.accessToken)
 //   }
 //   async function studentaccesstokenFetch() {
@@ -51,7 +51,7 @@ const StudentDashboard = () => {
 //           "enrollment_no":"12021002019060"
 //         }
 //     );
-//     // console.log(response.data.accessToken)
+//     // //console.log(response.data.accessToken)
 //   localStorage.setItem("student_token",response.data.accessToken)
 //   }
 // useEffect(() => {
@@ -67,9 +67,9 @@ useEffect(() => {
         }
       });
       setAllProjects(response.data)
-      console.log(response.data)
+      //console.log(response.data)
     } catch (err) {
-      console.log(err)
+      //console.log(err)
     } 
   };
 
@@ -84,9 +84,9 @@ useEffect(() => {
         }
       });
       setFacultyLists(response.data); // Store the fetched data in the state variable
-      // console.log(response.data)
+      // //console.log(response.data)
     } catch (err) {
-      console.log(err)
+      //console.log(err)
     } 
   };
   const fetchCurrentStudent = async () => {
@@ -98,10 +98,10 @@ useEffect(() => {
       });
        // Store the fetched data in the state variable
       //  setProjects
-      // console.log(response.data)
+      // //console.log(response.data)
       setNewProjects(response.data)
     } catch (err) {
-      console.log(err)
+      //console.log(err)
     } 
   };
   const fetchAllStudents = async () => {
@@ -113,9 +113,9 @@ useEffect(() => {
       });
        // Store the fetched data in the state variable
        setStudentList(response.data)
-      console.log(response.data)
+      //console.log(response.data)
     } catch (err) {
-      console.log(err)
+      //console.log(err)
     } 
   };
   fetchCurrentStudent()

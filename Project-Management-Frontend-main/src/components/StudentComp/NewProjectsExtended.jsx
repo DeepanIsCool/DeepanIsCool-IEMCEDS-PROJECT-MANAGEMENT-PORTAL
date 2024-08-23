@@ -30,7 +30,7 @@ const NewProjectsExtended = ({setPopUp,show,FacultyNames,requirements,title,desc
             authorization: "Bearer " + localStorage.getItem("student_token"),
           },
         })
-      console.log(response.data)
+      //console.log(response.data)
       const updatedJoinedProjects = [...joinedProjects, id];
         setJoinedProjects(updatedJoinedProjects);
 
@@ -38,7 +38,7 @@ const NewProjectsExtended = ({setPopUp,show,FacultyNames,requirements,title,desc
         localStorage.setItem('joinedProjects', JSON.stringify(updatedJoinedProjects));
     }
     catch(err){
-      console.log(err)
+      //console.log(err)
       
         
       

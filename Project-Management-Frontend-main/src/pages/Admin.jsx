@@ -22,10 +22,10 @@ useEffect(() => {
         }
       });
        // Store the fetched data in the state variable
-      // console.log(response.data)
+      // //console.log(response.data)
      setFacultyName(response.data.name)
     } catch (err) {
-      console.log(err)
+      //console.log(err)
     } 
   };
 
@@ -39,10 +39,10 @@ useEffect(() => {
               }
             });
             setApplications(response.data); // Store the fetched data in the state variable
-            // console.log(response.data)
-            // console.log(localStorage.getItem("access_token"))
+            // //console.log(response.data)
+            // //console.log(localStorage.getItem("access_token"))
           } catch (err) {
-            console.log(err)
+            //console.log(err)
           } 
         };
       
@@ -62,10 +62,10 @@ useEffect(() => {
                 Authorization: `Bearer ${localStorage.getItem("access_token")}`
               }
             });
-            console.log(response.data)
+            //console.log(response.data)
             setProjects(response.data); // Store the fetched data in the state variable
           } catch (err) {
-            console.log(err)
+            //console.log(err)
           } 
         };
     
@@ -82,9 +82,9 @@ useEffect(() => {
             }
           });
           // setFacultyLists(response.data); // Store the fetched data in the state variable
-          // console.log(response.data)
+          // //console.log(response.data)
         } catch (err) {
-          console.log(err)
+          //console.log(err)
         } 
       };
 
@@ -92,7 +92,7 @@ useEffect(() => {
     }, []);
     const handleDelete = (projectId) => {
       setProjects(projects.filter(project => project._id !== projectId));
-      console.log("Working")
+      //console.log("Working")
     };
     const fetchAllStudents = async () => {
       try {
@@ -103,9 +103,9 @@ useEffect(() => {
         });
          // Store the fetched data in the state variable
          setStudentList(response.data)
-        console.log(response.data)
+        //console.log(response.data)
       } catch (err) {
-        console.log(err)
+        //console.log(err)
       } 
     };
     useEffect(()=>{

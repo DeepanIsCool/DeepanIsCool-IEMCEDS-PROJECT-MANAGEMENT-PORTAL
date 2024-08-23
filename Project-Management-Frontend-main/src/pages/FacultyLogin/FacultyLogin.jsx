@@ -32,7 +32,7 @@ const FacultyLogin = () => {
           
         }
     );
-    console.log(response.data)
+    //console.log(response.data)
     localStorage.setItem("access_token",response.data.accessToken)
     navigate("/admin-dashboard")
   }
