@@ -4,6 +4,7 @@ import { useNavigate } from 'react-router-dom';
 import { FaRegEdit } from "react-icons/fa";
 import CurrentProjectExtended from '../StudentComp/CurrentProjectExtended';
 const AdminProjects = ({title,launchDate,requirement,description,tags,facultyId,facultyList,studentList,studentId, projectId,githubLink,onDelete}) => {
+  
   const navigate=useNavigate()
   const facultyMap = facultyList.reduce((acc, faculty) => {
     acc[faculty._id] = faculty.name;
