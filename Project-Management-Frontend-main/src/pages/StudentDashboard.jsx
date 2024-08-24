@@ -124,6 +124,12 @@ useEffect(() => {
   fetchFaculty();
   fetchAllStudents()
 }, []);
+const deleteToken=()=>{
+  localStorage.removeItem("access_token");
+  localStorage.removeItem("student_token");
+  localStorage.removeItem("joinedProjects");
+  navigate("/studentLogin")
+}
   return (
     
     <div className='bg-whitesmoke w-[100vw] min-h-[100vh] relative'>
@@ -135,6 +141,9 @@ useEffect(() => {
             <img className="w-14 h-14 rounded-[50%] object-cover cursor-pointer" src={profile} 
             onClick={()=>navigate("/studentProfile")}
             />
+                        <button className='border-red-400 border-2 px-5 py-3 rounded-md text-black text-xl cursor-pointer' onClick={deleteToken}>
+                Logout
+            </button>
           </div>
         </div>
         <h2>Current Project</h2>
