@@ -21,7 +21,7 @@ const ContestSchema = new mongoose.Schema({
   createdAt: {
     type: Date,
     default: Date.now,
-    expires: 30 // Automatically delete documents after 10 seconds
+    expires: 300 // Automatically delete documents after 10 seconds
   }
 });
 
