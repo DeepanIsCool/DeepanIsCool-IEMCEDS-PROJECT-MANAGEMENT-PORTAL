@@ -38,7 +38,7 @@ function App() {
         title = "";
         metaDescription = "";
         break;
-      case "/admin-dashboard":
+      case "/faculty-dashboard":
         title = "";
         metaDescription = "";
         break;
@@ -73,7 +73,7 @@ function App() {
       <Route path="/facultySignUp" element={<FacultySignUp/>}/>
       <Route path="/facultyLogin" element={<FacultyLogin/>}/>
       <Route path="/studentLogin" element={<StudentLogin/>}/>
-      <Route path="/admin-dashboard" element={<Admin/>}/>
+      <Route path="/faculty-dashboard" element={<Admin/>}/>
     </Routes>
   );
 }

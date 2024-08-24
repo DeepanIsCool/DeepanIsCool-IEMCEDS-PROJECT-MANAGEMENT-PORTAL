@@ -97,7 +97,7 @@ function ProjectForm() {
         requirements: "",
         faculty_list:[]
       });
-      navigate("/admin-dashboard")
+      navigate("/faculty-dashboard")
     } catch (error) {
       console.error("Error submitting form:", error.response.data);
       setResponseMessage("");
