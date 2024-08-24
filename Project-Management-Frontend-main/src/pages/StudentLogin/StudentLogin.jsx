@@ -73,7 +73,7 @@ const StudentLogin = () => {
           </div>
           <div className="flex">
           <input
-            className= "border-2 border-red-500 w-full"
+            className={`Input w-[90%] border-2 border-red-500`}
             type={isPasswordVisible?"password":"text"}
             name="password"
             placeholder="*********"
