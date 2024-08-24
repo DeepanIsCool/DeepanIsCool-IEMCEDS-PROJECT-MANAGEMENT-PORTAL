@@ -21,7 +21,7 @@ const NewProjectsExtended = ({setPopUp,show,FacultyNames,requirements,title,desc
   async function apply(id) {
     try{
       const response = await axios.post(
-         "http://localhost:3000/api/projectRoutes/applyforProject",
+         import.meta.env.VITE_BACKEND_URL+"api/projectRoutes/applyforProject",
         {
           projectId:id
         },

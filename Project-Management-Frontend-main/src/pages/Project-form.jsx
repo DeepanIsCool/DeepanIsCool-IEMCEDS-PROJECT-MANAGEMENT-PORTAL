@@ -11,7 +11,7 @@ function ProjectForm() {
   useEffect(() => {
     const fetchFacultyProflie = async () => {
       try {
-        const response = await axios.get('http://localhost:3000/api/facultyRoutes/facultyProfile', {
+        const response = await axios.get(import.meta.env.VITE_BACKEND_URL+'api/facultyRoutes/facultyProfile', {
           headers: {
             Authorization: `Bearer ${localStorage.getItem("access_token")}`
           }
@@ -32,7 +32,7 @@ function ProjectForm() {
     launchTime: "",
     status: "",
     expiryDate: "",
-    expiryTime: "",
+    githubLink: "",
     projectDuration: "",
     description: "",
     requirements: "",
@@ -72,7 +72,7 @@ function ProjectForm() {
 //console.log(formData);
     try {
       const response = await axios.post(
-        "http://localhost:3000/api/projectRoutes/createProject",
+        import.meta.env.VITE_BACKEND_URL+"api/projectRoutes/createProject",
         dataToSend,
         {
           headers: {
@@ -91,7 +91,7 @@ function ProjectForm() {
         launchTime: "",
         status: "",
         expiryDate: "",
-        expiryTime: "",
+        githubLink: "",
         projectDuration: "",
         description: "",
         requirements: "",
@@ -150,24 +150,23 @@ function ProjectForm() {
               required
             />
           </div>
-
           <div className="mb-4">
             <label
               htmlFor="expiryTime"
               className="block text-gray-700 font-bold mb-2"
             >
-              Expiry Time
+            Github Link
             </label>
             <input
-              type="time"
-              id="expiryTime"
-              name="expiryTime"
-              value={formData.expiryTime}
+              type="text"
+              id="githubLink"
+              name="githubLink"
+              value={formData.githubLink}
               onChange={handleChange}
               className="w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring focus:border-blue-500"
-              required
             />
           </div>
+          
 
           <div className="mb-4 ml-3">
             <p className="inline text-gray-700 font-bold mb-2">Project Duration</p>

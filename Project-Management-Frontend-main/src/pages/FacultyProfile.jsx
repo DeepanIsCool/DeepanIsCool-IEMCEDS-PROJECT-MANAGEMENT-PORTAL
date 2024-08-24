@@ -1,6 +1,8 @@
 import { ImCross } from "react-icons/im";
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import profile from "../images/profile.jpg"
+
 import { useNavigate } from "react-router-dom";
 const FacultyProfile = () => {
   const [facultyDetails, setFacultyDetails] = useState([]);
@@ -15,7 +17,7 @@ const FacultyProfile = () => {
   useEffect(() => {
     const fetchFacultyProflie = async () => {
       try {
-        const response = await axios.get('http://localhost:3000/api/facultyRoutes/facultyProfile', {
+        const response = await axios.get(import.meta.env.VITE_BACKEND_URL+'api/facultyRoutes/facultyProfile', {
           headers: {
             Authorization: `Bearer ${localStorage.getItem("access_token")}`
           }
@@ -39,7 +41,7 @@ const FacultyProfile = () => {
   }, []);
   const handleSave = async () => {
     try {
-      const response = await axios.put('http://localhost:3000/api/facultyRoutes/editFacultyProfile', formData, {
+      const response = await axios.put(import.meta.env.VITE_BACKEND_URL+'api/facultyRoutes/editFacultyProfile', formData, {
         headers: {
           Authorization: `Bearer ${localStorage.getItem("access_token")}`
         }
@@ -66,7 +68,7 @@ const FacultyProfile = () => {
     <div className="w-[100vw] min-h-[100vh]">
       <div className="px-3 py-0">
       <div className="h-[30vh] w-[100%] flex items-center bg-white gap-10 mt-20">
-      <img className="w-[15vw] h-full rounded-[60%] object-cover" src="https://plus.unsplash.com/premium_photo-1671656349218-5218444643d8?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"/>
+      <img className="w-[15vw] h-full rounded-[60%] object-cover" src={profile}/>
       <div className="flex flex-col bg-white">
       <input
               type="text"

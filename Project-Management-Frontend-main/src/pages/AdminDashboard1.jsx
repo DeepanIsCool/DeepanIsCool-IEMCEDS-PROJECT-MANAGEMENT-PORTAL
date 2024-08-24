@@ -2,7 +2,7 @@
 import { ImCross } from "react-icons/im";
 import React, { useState, useEffect } from 'react';
 import ReactDOM from "react-dom";
-
+import profile from "../images/profile.jpg"
 import axios from 'axios';
 const AdminDashboard1 = ({setPopUp,show,studentId,title,applicationId}) => {
   // const navigate = useNavigate();
@@ -14,7 +14,7 @@ const AdminDashboard1 = ({setPopUp,show,studentId,title,applicationId}) => {
   async function approve(id) {
     try{
       const response = await axios.post(
-         "http://localhost:3000/api/projectRoutes/approveforProject",
+         import.meta.env.VITE_BACKEND_URL+"api/projectRoutes/approveforProject",
          {
           applicationId:applicationId,
           status : "Approved"
@@ -34,7 +34,7 @@ const AdminDashboard1 = ({setPopUp,show,studentId,title,applicationId}) => {
   async function reject(id) {
     try{
       const response = await axios.post(
-         "http://localhost:3000/api/projectRoutes/approveforProject",
+         import.meta.env.VITE_BACKEND_URL+"api/projectRoutes/approveforProject",
          {
           applicationId:applicationId,
           status : "Rejected"
@@ -56,7 +56,7 @@ const AdminDashboard1 = ({setPopUp,show,studentId,title,applicationId}) => {
     async function fetchStudentDetails(){
       try{
         const response = await axios.post (
-          "http://localhost:3000/api/studentsRoutes/studentdetails",
+          import.meta.env.VITE_BACKEND_URL+"api/studentsRoutes/studentdetails",
           {
             id:studentId
                },
@@ -121,7 +121,7 @@ const AdminDashboard1 = ({setPopUp,show,studentId,title,applicationId}) => {
         <ImCross color="white" className="px-2 py-2 rounded-[50%] bg-red-500  absolute top-0 right-0 hover:cursor-pointer" onClick={()=>setPopUp(false)}  / >
       </div>
       <div className="h-[30vh] w-[100%] flex items-center bg-white gap-10 mt-20">
-      <img className="w-72 h-full rounded-[60%] object-cover" src="https://plus.unsplash.com/premium_photo-1671656349218-5218444643d8?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"/>
+      <img className="w-72 h-full rounded-[60%] object-cover" src={profile}/>
       <div className="flex flex-col bg-white">
       <h1 className="text-29xl  font-[550]  bg-white block ">{studentDetails.name}</h1>
       <div className="bg-white">

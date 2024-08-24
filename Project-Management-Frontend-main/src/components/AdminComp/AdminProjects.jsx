@@ -18,7 +18,7 @@ const AdminProjects = ({title,launchDate,requirement,description,tags,facultyId,
   .map(student => student.name); 
   const deleteProject = async () => {
     try {
-      await axios.delete('http://localhost:3000/api/projectRoutes/deleteProject', {
+      await axios.delete(import.meta.env.VITE_BACKEND_URL+'api/projectRoutes/deleteProject', {
         headers: {
           Authorization: `Bearer ${localStorage.getItem("access_token")}`,
           'Content-Type': 'application/json',

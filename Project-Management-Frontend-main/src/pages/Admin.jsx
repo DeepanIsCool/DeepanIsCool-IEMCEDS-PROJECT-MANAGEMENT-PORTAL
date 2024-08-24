@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import StudentApplication from '../components/AdminComp/StudentApplicationComp'
 import axios from 'axios';
+import profile from "../images/profile.jpg"
 import AdminProjects from '../components/AdminComp/AdminProjects';
 import { useNavigate } from 'react-router-dom';
 const Admin = () => {
@@ -16,7 +17,7 @@ const Admin = () => {
 useEffect(() => {
   const fetchFacultyProflie = async () => {
     try {
-      const response = await axios.get('http://localhost:3000/api/facultyRoutes/facultyProfile', {
+      const response = await axios.get(import.meta.env.VITE_BACKEND_URL+'api/facultyRoutes/facultyProfile', {
         headers: {
           Authorization: `Bearer ${localStorage.getItem("access_token")}`
         }
@@ -33,7 +34,7 @@ useEffect(() => {
 }, []);
               const fetchApplications = async () => {
           try {
-            const response = await axios.get('http://localhost:3000/api/projectRoutes/getallapplications', {
+            const response = await axios.get(import.meta.env.VITE_BACKEND_URL+'api/projectRoutes/getallapplications', {
               headers: {
                 Authorization: `Bearer ${localStorage.getItem("access_token")}`
               }
@@ -57,7 +58,7 @@ useEffect(() => {
       useEffect(() => {
         const fetchProjects = async () => {
           try {
-            const response = await axios.get('http://localhost:3000/api/projectRoutes/getProjects', {
+            const response = await axios.get(import.meta.env.VITE_BACKEND_URL+'api/projectRoutes/getProjects', {
               headers: {
                 Authorization: `Bearer ${localStorage.getItem("access_token")}`
               }
@@ -76,7 +77,7 @@ useEffect(() => {
     useEffect(() => {
       const fetchFaculty = async () => {
         try {
-          const response = await axios.get('http://localhost:3000/api/facultyRoutes/getAllFaculty', {
+          const response = await axios.get(import.meta.env.VITE_BACKEND_URL+'api/facultyRoutes/getAllFaculty', {
             headers: {
               Authorization: `Bearer ${localStorage.getItem("access_token")}`
             }
@@ -96,7 +97,7 @@ useEffect(() => {
     };
     const fetchAllStudents = async () => {
       try {
-        const response = await axios.get('http://localhost:3000/api/studentsRoutes/getAllStudents', {
+        const response = await axios.get(import.meta.env.VITE_BACKEND_URL+'api/studentsRoutes/getAllStudents', {
           headers: {
             Authorization: `Bearer ${localStorage.getItem("student_token")}`
           }
@@ -118,7 +119,7 @@ useEffect(() => {
           <h1>Managment</h1>
           <div className='flex gap-5'>
             <button className='border-blue-400 border-2 px-5 py-3 rounded-md text-black text-xl'>{facultyName}</button>
-            <img className="w-14 h-14 rounded-[50%] object-cover cursor-pointer" src="https://plus.unsplash.com/premium_photo-1671656349218-5218444643d8?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" 
+            <img className="w-14 h-14 rounded-[50%] object-cover cursor-pointer" src={profile} 
             onClick={()=>navigate("/facultyProfile")}
             />
           </div>
