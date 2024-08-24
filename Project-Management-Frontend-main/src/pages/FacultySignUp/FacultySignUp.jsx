@@ -34,7 +34,7 @@ const FacultySignUp = () => {
   const [IsformFilled, setIsformFilled] = useState(false);
   const [, setVerified] = useState(true);
   const [showOTPInput, setShowOTPInput] = useState(false);
-  const [timerSeconds, setTimerSeconds] = useState(300); // 5 minutes in seconds
+  const [timerSeconds, setTimerSeconds] = useState(30); // 5 minutes in seconds
   const [otpValue, setOTPValue] = useState("");
   const [otpValueEmail, setOTPValueEmail] = useState("");
   const [verifyOtp, setverifyOtp] = useState(false);
@@ -47,7 +47,7 @@ const FacultySignUp = () => {
   // const [emailOtpError, setEmailOtpError] = useState(false);
   const [isEmailOtpLoading, setIsEmailOtpLoading] = useState(false);
   // const [emailVerified, setEmailVerified] = useState(false);
-  const [timerSecondsEmail, settimerSecondsEmail] = useState(300);
+  const [timerSecondsEmail, settimerSecondsEmail] = useState(30);
 
   const [passwordError, setPasswordError] = useState({
     lengthError: false,
@@ -657,11 +657,8 @@ const FacultySignUp = () => {
               >
                 {!IsOtpLoading
                   ? timerActive
-                    ? `Resend OTP in ${Math.floor(timerSeconds / 60)}:${(
-                        timerSeconds % 60
-                      )
-                        .toString()
-                        .padStart(2, "0")} minutes`
+                    ? `Resend OTP in ${Math.floor(timerSeconds)}
+                       seconds`
                     : "Send Otp"
                   : "Sending.."}
               </button>
@@ -713,11 +710,8 @@ const FacultySignUp = () => {
               >
                 {!isEmailOtpLoading
                   ? timerActiveEmail
-                    ? `Resend OTP in ${Math.floor(timerSecondsEmail / 60)}:${(
-                        timerSecondsEmail % 60
-                      )
-                        .toString()
-                        .padStart(2, "0")} minutes`
+                    ? `Resend OTP in ${Math.floor(timerSecondsEmail)}
+                    seconds`
                     : "Send Otp"
                   : "Sending.."}
               </button>
