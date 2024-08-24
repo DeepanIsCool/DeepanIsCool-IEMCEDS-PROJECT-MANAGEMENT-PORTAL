@@ -1,7 +1,7 @@
-import { useState, useEffect } from "react";
-import "./FacultyLogin.css";
-import { useNavigate } from "react-router-dom";
+import { useEffect, useState } from "react";
 import { FaEye, FaEyeSlash } from 'react-icons/fa'; // Importing icons
+import { useNavigate } from "react-router-dom";
+import "./FacultyLogin.css";
 
 import axios from "axios";
 const FacultyLogin = () => {
@@ -57,7 +57,7 @@ const FacultyLogin = () => {
             Employee ID:
           </div>
           <input
-            className={`Input border-2 border-red-500" `}
+            className={`Input w-[90%] border-2 border-red-500" `}
             type="number"
             name="employee_id"
             placeholder="100001"
@@ -73,7 +73,7 @@ const FacultyLogin = () => {
           </div>
           <div className="flex">
           <input
-            className= "border-2 border-red-500 w-full"
+            className={`Input w-[90%] border-2 border-red-500`}
             type={isPasswordVisible?"password":"text"}
             name="password"
             placeholder="*********"

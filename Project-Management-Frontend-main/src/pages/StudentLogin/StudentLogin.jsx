@@ -1,7 +1,7 @@
-import { useState, useEffect } from "react";
-import "./StudentLogin.css";
-import { useNavigate } from "react-router-dom";
+import { useEffect, useState } from "react";
 import { FaEye, FaEyeSlash } from 'react-icons/fa'; // Importing icons
+import { useNavigate } from "react-router-dom";
+import "./StudentLogin.css";
 
 import axios from "axios";
 const StudentLogin = () => {
@@ -57,7 +57,7 @@ const StudentLogin = () => {
             Enrollment No:
           </div>
           <input
-            className={`Input border-2 border-red-500" `}
+            className={`Input w-[90%] border-2 border-red-500" `}
             type="number"
             name="enrollment_no"
             placeholder="21021002019054"

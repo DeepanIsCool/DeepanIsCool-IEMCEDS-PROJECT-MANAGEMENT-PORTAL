@@ -1,8 +1,8 @@
-import { useState, useEffect } from "react";
+import { useEffect, useState } from "react";
 import "./FacultyLogin.css";
 // import gsap from "gsap";
-import { useNavigate } from "react-router-dom";
 import { FaEye, FaEyeSlash } from 'react-icons/fa'; // Importing icons
+import { useNavigate } from "react-router-dom";
 
 // // import Alert from "../AlertBox/Alert";
 // import SuccessLottie from "../../Lottie/success.json";
@@ -607,7 +607,7 @@ const FacultySignUp = () => {
             Employee ID:
           </div>
           <input
-            className={`Input ${enrollError ? "border-2 border-red-500" : ""}`}
+            className={`Input w-[90%] ${enrollError ? "border-2 border-red-500" : ""}`}
             type="number"
             placeholder="100001"
             value={employee_id}
@@ -628,7 +628,7 @@ const FacultySignUp = () => {
 
           <div className="relative">
             <input
-              className={`Input ${phoneError ? "border-2 border-red-500" : ""}`}
+              className={`Input w-[90%] ${phoneError ? "border-2 border-red-500" : ""}`}
               type="tel"
               placeholder="0123456789"
               value={phone}
@@ -649,7 +649,7 @@ const FacultySignUp = () => {
               <button
                 className={`bg-white ${
                   !IsOtpLoading ? "hover:bg-black hover:text-white" : ""
-                } text-black font-bold py-2 px-4 rounded-md absolute right-0 top-0 mt-4 mr-4 cursor-pointer ${
+                } text-black font-bold py-2 px-4 rounded-md absolute right-0 top-0 mt-4 mr-10 cursor-pointer ${
                   timerActive ? "pointer-events-none" : ""
                 }`}
                 onClick={handleSendOTP}
@@ -666,7 +666,7 @@ const FacultySignUp = () => {
 
             {showOTPInput && !verifyOtp && (
               <input
-                className="Input mt-8"
+                className="Input mt-8 w-[90%]"
                 type="text"
                 placeholder="Enter OTP"
                 value={otpValue}
@@ -683,7 +683,7 @@ const FacultySignUp = () => {
           </div>
           <div className="relative">
             <input
-              className={`Input ${emailError ? "border-2 border-red-500" : ""}`}
+              className={`Input w-[90%] ${emailError ? "border-2 border-red-500" : ""}`}
               type="email"
               placeholder="abc@gmail.com"
               value={email}
@@ -703,7 +703,7 @@ const FacultySignUp = () => {
               <button
                 className={`bg-white ${
                   !isEmailOtpLoading ? "hover:bg-black hover:text-white" : ""
-                } text-black font-bold py-2 px-4 rounded-md absolute right-0 top-0 mt-4 mr-4 cursor-pointer ${
+                } text-black font-bold py-2 px-4 rounded-md absolute right-0 top-0 mt-4 mr-10 cursor-pointer ${
                   timerActiveEmail ? "pointer-events-none" : ""
                 }`}
                 onClick={handleSendOTPForEmail}
@@ -719,7 +719,7 @@ const FacultySignUp = () => {
 
             {showOTPInputEmail && !verifyOtpEmail && (
               <input
-                className="Input mt-8"
+                className="Input mt-8 w-[90%]"
                 type="text"
                 placeholder="Enter OTP"
                 value={otpValueEmail}
@@ -735,7 +735,7 @@ const FacultySignUp = () => {
             Name:
           </div>
           <input
-            className={`Input ${passwordError ? "" : ""}`}
+            className={`Input w-[90%] ${passwordError ? "" : ""}`}
             type="name"
             placeholder="Deepan Sadhukhan"
             value={name}
@@ -749,7 +749,7 @@ const FacultySignUp = () => {
           </div>
           <div className="flex">
           <input
-            className={`Input ${
+            className={`Input w-[90%] ${
               passwordError.lengthError ||
               passwordError.uppercaseError ||
               passwordError.specialCharError ||
