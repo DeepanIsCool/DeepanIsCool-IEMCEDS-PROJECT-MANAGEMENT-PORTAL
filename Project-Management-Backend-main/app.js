@@ -18,16 +18,6 @@ app.use(express.json());
 // Use CORS middleware to allow all origins
 app.use(cors());
 
-const resumeDir = path.join(__dirname, 'Resumes');
-
-// Check if the "resume" directory exists, if not, create it
-if (!fs.existsSync(resumeDir)) {
-  fs.mkdirSync(resumeDir);
-  console.log('Directory "resume" created.');
-} else {
-  console.log('Directory "resume" already exists.');
-}
-
 // Routes
 app.use('/api/studentsRoutes', require("./Students/studentsRoutes"));
 app.use('/api/facultyRoutes', require("./Faculty/facultyRoutes"));
