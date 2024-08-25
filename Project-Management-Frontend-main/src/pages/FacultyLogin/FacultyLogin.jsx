@@ -50,7 +50,7 @@ const FacultyLogin = () => {
       </div>
       <div className="Right pt-5">
         <form className="Form pt-5">
-          <div className="Heading">Faculty Signup</div>
+          <div className="Heading">Faculty Sigin</div>
           <div
             className={`Label w-full text-left`}
           >
