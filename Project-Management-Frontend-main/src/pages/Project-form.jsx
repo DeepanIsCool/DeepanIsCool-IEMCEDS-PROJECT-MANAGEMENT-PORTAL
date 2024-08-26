@@ -106,7 +106,7 @@ function ProjectForm() {
   };
   formData.launchDate=currentDate
   formData.launchTime=currentTime
-  formData.status="Upcoming"
+  formData.status="Ongoing"
  formData.projectDuration=duration
  formData.faculty_list=selectedFaculties
   return (
