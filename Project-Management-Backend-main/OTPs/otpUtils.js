@@ -15,7 +15,7 @@ exports.sendOtp = async (req , res, mobileNumber, otpCode) => {
     const currentTime = Date.now()
     if (
       otpRequests[mobileNumber] &&
-      currentTime - otpRequests[mobileNumber] < 30000
+      currentTime - otpRequests[mobileNumber] < 18000
     ) {
       throw new Error(
         "OTP request throttled. Please wait before requesting again."
