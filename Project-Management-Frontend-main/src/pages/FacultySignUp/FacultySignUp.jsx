@@ -32,8 +32,8 @@ const FacultySignUp = () => {
   const [, setPopupMessage] = useState("");
   const [, setalertButtonText] = useState("");
   const [IsformFilled, setIsformFilled] = useState(false);
-  const [, setVerified] = useState(true);
-  const [showOTPInput, setShowOTPInput] = useState(false);
+  // const [, setVerified] = useState(true);
+  // const [showOTPInput, setShowOTPInput] = useState(false);
   const [timerSeconds, setTimerSeconds] = useState(300); // 5 minutes in seconds
   const [otpValue, setOTPValue] = useState("");
   const [otpValueEmail, setOTPValueEmail] = useState("");
@@ -144,57 +144,57 @@ const FacultySignUp = () => {
     }
   };
 
-  const handleSendOTP = async (e) => {
-    e.preventDefault();
+  // const handleSendOTP = async (e) => {
+  //   e.preventDefault();
 
-    try {
-      if (phone !== "") {
-        // //console.log(JSON.stringify({ number: userData.phone_no }));
-        const phoneNumber = phone.toString();
-        setIsOtpLoading(true);
-        const response = await fetch(
-          import.meta.env.VITE_BACKEND_URL+"api/facultyRoutes/signup/SendOtpNumber",
-          {
-            method: "POST",
-            headers: {
-              "Content-Type": "application/json",
-            },
-            body: JSON.stringify({ number: phoneNumber }),
-          }
-        );
+  //   try {
+  //     if (phone !== "") {
+  //       // //console.log(JSON.stringify({ number: userData.phone_no }));
+  //       const phoneNumber = phone.toString();
+  //       setIsOtpLoading(true);
+  //       const response = await fetch(
+  //         import.meta.env.VITE_BACKEND_URL+"api/facultyRoutes/signup/SendOtpNumber",
+  //         {
+  //           method: "POST",
+  //           headers: {
+  //             "Content-Type": "application/json",
+  //           },
+  //           body: JSON.stringify({ number: phoneNumber }),
+  //         }
+  //       );
 
-        if (response.ok) {
-          setIsOtpLoading(false);
-          setShowOTPInput(true);
-          setTimerActive(true);
-        } else {
-          setPopupMessage("error sending otp");
-          setalertButtonText("Try again");
-          setIsOtpLoading(false);
-          // setalertLottie(ErrorLottie);
-          setOtpError(true);
-          // OTP sending failed, handle error
-          console.error("Failed to send OTP:", response.statusText);
-          // alert("Failed to send OTP. Please try again.");
-        }
-      } else {
-        // setPopupMessage("Please enter a valid 10-digit phone number.");
-        // setalertButtonText("Try again");
-        setIsOtpLoading(false);
-        // setalertLottie(ErrorLottie);
-        setOtpError(true);
-        // Invalid phone number, show error
-        // alert("Please enter a valid 10-digit phone number.");
-      }
-    } catch (error) {
-      setOtpError(true);
-      setPopupMessage(error);
-      setIsOtpLoading(false);
-      // setalertLottie(ErrorLottie);
-      console.error("Error sending OTP:", error);
-      alert("Error sending OTP. Please try again.");
-    }
-  };
+  //       if (response.ok) {
+  //         setIsOtpLoading(false);
+  //         setShowOTPInput(true);
+  //         setTimerActive(true);
+  //       } else {
+  //         setPopupMessage("error sending otp");
+  //         setalertButtonText("Try again");
+  //         setIsOtpLoading(false);
+  //         // setalertLottie(ErrorLottie);
+  //         setOtpError(true);
+  //         // OTP sending failed, handle error
+  //         console.error("Failed to send OTP:", response.statusText);
+  //         // alert("Failed to send OTP. Please try again.");
+  //       }
+  //     } else {
+  //       // setPopupMessage("Please enter a valid 10-digit phone number.");
+  //       // setalertButtonText("Try again");
+  //       setIsOtpLoading(false);
+  //       // setalertLottie(ErrorLottie);
+  //       setOtpError(true);
+  //       // Invalid phone number, show error
+  //       // alert("Please enter a valid 10-digit phone number.");
+  //     }
+  //   } catch (error) {
+  //     setOtpError(true);
+  //     setPopupMessage(error);
+  //     setIsOtpLoading(false);
+  //     // setalertLottie(ErrorLottie);
+  //     console.error("Error sending OTP:", error);
+  //     alert("Error sending OTP. Please try again.");
+  //   }
+  // };
 
   const handleOTPChangeForEmail = async (event) => {
     const { value } = event.target;
@@ -344,10 +344,10 @@ const FacultySignUp = () => {
 
   const handleEnrollChange = async (event) => {
     const { value } = event.target;
-    if (value.length <= 6) {
+    if (value.length <= 8) {
       setEnroll(value);
     }
-    setEnrollError(!/^\d{6}$/.test(value));
+    setEnrollError(!/^\d{8}$/.test(value));
     setIsformFilled(
       value !== "" &&
         password !== "" &&
@@ -358,8 +358,8 @@ const FacultySignUp = () => {
         verifyOtpEmail !== ""
     );
 
-    // Check if Employee ID input length is 6
-    if (value.length === 6) {
+    // Check if Employee ID input length is 8
+    if (value.length === 8) {
    
       try {
         const employee_id = Number(value);
@@ -488,7 +488,7 @@ const FacultySignUp = () => {
     event.preventDefault();
     //console.log("Hello")
     if (enrollError) {
-      alert("Please enter a 6-digit Employee ID");
+      alert("Please enter a 8-digit Employee ID");
       return;
     }
     if (phoneError) {
@@ -609,15 +609,15 @@ const FacultySignUp = () => {
           <input
             className={`Input w-[90%] ${enrollError ? "border-2 border-red-500" : ""}`}
             type="number"
-            placeholder="100001"
+            placeholder="10000001"
             value={employee_id}
-            maxLength={6}
+            maxLength={8}
             pattern="[0-9]"
             onChange={handleEnrollChange}
           />
           {enrollError && (
             <span className="Error text-gray-600">
-              * Please enter a 6-digit Employee ID.
+              * Please enter a 8-digit Employee ID.
             </span>
           )}
           <div
@@ -626,8 +626,8 @@ const FacultySignUp = () => {
             Phone:
           </div>
 
-          <div className="relative">
-            <input
+          <div>
+          <input
               className={`Input w-[90%] ${phoneError ? "border-2 border-red-500" : ""}`}
               type="tel"
               placeholder="0123456789"
@@ -636,47 +636,7 @@ const FacultySignUp = () => {
               maxLength={10}
               readOnly
             />
-            {verifyOtp ? (
-              <div className=" p-0 absolute right-0 top-0 mt-4 mr-4">
-                {/* <Lottie
-                  options={defaultOptionsforGreentick}
-                  height={24}
-                  width={24}
-                  style={{ marginTop: 8, marginLeft: 4 }} // Example: Apply margin
-                /> */}
-              </div>
-            ) : (
-              <button
-                className={`bg-white ${
-                  !IsOtpLoading ? "hover:bg-black hover:text-white" : ""
-                } text-black font-bold py-2 px-4 rounded-md absolute right-0 top-0 mt-4 mr-10 cursor-pointer ${
-                  timerActive ? "pointer-events-none" : ""
-                }`}
-                onClick={handleSendOTP}
-                // disabled={phoneError || phone.length !== 10 || timerActive}
-              >
-                {!IsOtpLoading
-                  ? timerActive
-                    ? `Resend OTP in ${Math.floor(timerSeconds / 60)}:${(
-                        timerSeconds % 60
-                      )
-                        .toString()
-                        .padStart(2, "0")} minutes`
-                    : "Send Otp"
-                  : "Sending.."}
-              </button>
-            )}
 
-            {showOTPInput && !verifyOtp && (
-              <input
-                className="Input mt-8 w-[90%]"
-                type="text"
-                placeholder="Enter OTP"
-                value={otpValue}
-                maxLength={4}
-                onChange={handleOTPChange}
-              />
-            )}
           </div>
 
           <div
@@ -688,10 +648,9 @@ const FacultySignUp = () => {
             <input
               className={`Input w-[90%] ${emailError ? "border-2 border-red-500" : ""}`}
               type="email"
-              placeholder="abc@gmail.com"
+              placeholder="abc@iem.edu.in"
               value={email}
               onChange={handleEmailChange}
-              readOnly
             />
             {verifyOtpEmail ? (
               <div className="p-0 absolute right-0 top-0 mt-4 mr-4">
@@ -838,7 +797,6 @@ const FacultySignUp = () => {
                     !passwordError.specialCharError &&
                     !passwordError.numberError &&
                     !passwordError.lowercaseError &&
-                    verifyOtp &&
                     verifyOtpEmail // Check if phone number is verified
                       ? "bg-[#3466FF] border-2 text-white py-3 px-12 rounded-lg text-[15px] z-10 hover:bg-transparent hover:text-[#3466FF] hover:border-2 hover:border-[#3466FF] duration-200 cursor-pointer"
                       : "border-gray-400 text-gray-400 cursor-not-allowed border-2 py-3 px-12 rounded-lg text-[15px] z-10"
@@ -854,7 +812,6 @@ const FacultySignUp = () => {
                     passwordError.specialCharError ||
                     passwordError.numberError ||
                     passwordError.lowercaseError ||
-                    !verifyOtp || // Disable if phone number is not verified
                     !verifyOtpEmail // Disable if phone number is not verified
                   }
                 >

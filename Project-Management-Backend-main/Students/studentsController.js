@@ -149,7 +149,13 @@ const SendOtpEmail=asyncHandler(async(req,res)=>{
   
         const sendResetPasswordEmail = async (eMail) => {
           const transporter = nodemailer.createTransport({
-            service: "gmail",
+            
+              host: "smtp.gmail.com",
+              port: 587,
+              tls: {
+                  rejectUnauthorized: false,
+                  minVersion: "TLSv1.2"
+              },
             auth: {
               user: "sadhukhandeepan@gmail.com",
               pass: "opie ojxq xdrv ndkz",
