@@ -60,7 +60,7 @@ const FacultyLogin = () => {
             className={`Input w-[90%] border-2 border-red-500" `}
             type="number"
             name="employee_id"
-            placeholder="100001"
+            placeholder="10000001"
             value={formData.employee_id}
             onChange={handleChange}
             required

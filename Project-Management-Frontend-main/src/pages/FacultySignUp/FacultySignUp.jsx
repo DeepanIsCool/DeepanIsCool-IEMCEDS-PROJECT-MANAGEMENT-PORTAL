@@ -634,7 +634,6 @@ const FacultySignUp = () => {
               value={phone}
               onChange={handlePhoneChange}
               maxLength={10}
-              readOnly
             />
 
           </div>
@@ -705,7 +704,6 @@ const FacultySignUp = () => {
             placeholder="Deepan Sadhukhan"
             value={name}
             onChange={handleNameChange}
-            readOnly
           />
           <div
             className={`Label w-full text-left ${passwordError ? "error" : ""}`}
