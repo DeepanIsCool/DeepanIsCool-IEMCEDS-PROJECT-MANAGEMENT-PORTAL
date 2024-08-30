@@ -2,7 +2,7 @@
 
 ## Open each folder in an Integrated Terminal and run npm i
 
-## Setup .env file for Backend Directory
+## Setup .env file for Backend Directory & Frontend Directory
 
 ## Note: Please ensure you have installed <code><a href="https://nodejs.org/en/download/">nodejs</a></code>
 
